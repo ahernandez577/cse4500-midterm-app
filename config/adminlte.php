@@ -232,27 +232,27 @@ return [
         [
             'text' => 'Units',
             'url'  => 'units',
-            'icon' => 'fa-solid fa-computer',
+            'icon' => 'fas fa-solid fa-computer',
         ],
         [         
             'text' => 'Hardware',
             'url'  => 'hardware',
-            'icon' => 'fa-solid fa-robot',
+            'icon' => 'fas fa-solid fa-robot',
         ],
         [         
             'text' => 'Employees',
             'url'  => 'employees',
-            'icon' => 'fa-solid fa-people-group',
+            'icon' => 'fas fa-solid fa-people-group',
         ],
         [         
             'text' => 'Purchases',
             'url'  => 'purchases',
-            'icon' => 'fa-solid fa-money-check-dollar',
+            'icon' => 'fas fa-solid fa-money-check-dollar',
         ],
         [         
             'text' => 'Notes',
             'url'  => 'notes',
-            'icon' => 'fa-regular fa-note-sticky',
+            'icon' => 'fas fa-regular fa-note-sticky',
         ],
     ],
 
