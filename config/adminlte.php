@@ -228,31 +228,31 @@ return [
         [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],     
+        ],
         [
-            'text' => 'Units',
-            'url'  => 'units',
-            'icon' => 'fas fa-solid fa-computer',
+            'text' => 'Manage Invoices',
+            'url'  => 'invoices',
+            'icon' => 'fas fa-fw fa-file',
+        ],
+        [
+            'text' => 'Manage Customers',
+            'url'  => 'customers',
+            'icon' => 'fas fa-fw fa-file',
         ],
         [         
-            'text' => 'Hardware',
-            'url'  => 'hardware',
-            'icon' => 'fas fa-solid fa-robot',
+            'text' => 'Manage Equipment',
+            'url'  => 'equipment',
+            'icon' => 'fas fa-fw fa-calendar-alt',
         ],
-        [         
-            'text' => 'Employees',
-            'url'  => 'employees',
-            'icon' => 'fas fa-solid fa-people-group',
+        [
+            'text' => 'Manufacturers',
+            'url'  => 'manufacturers',
+            'icon' => 'fas fa-fw fa-file',
         ],
-        [         
-            'text' => 'Purchases',
-            'url'  => 'purchases',
-            'icon' => 'fas fa-solid fa-money-check-dollar',
-        ],
-        [         
+        [
             'text' => 'Notes',
-            'url'  => 'notes',
-            'icon' => 'fas fa-solid fa-note-sticky',
+            'url'  => 'note',
+            'icon' => 'fas fa-fw fa-file',
         ],
     ],
 
