@@ -252,7 +252,7 @@ return [
         [         
             'text' => 'Notes',
             'url'  => 'notes',
-            'icon' => 'fas fa-regular fa-note-sticky',
+            'icon' => 'fas fa-solid fa-note-sticky',
         ],
     ],
 
