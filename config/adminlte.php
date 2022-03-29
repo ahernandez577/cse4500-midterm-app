@@ -247,12 +247,12 @@ return [
         [         
             'text' => 'Purchases',
             'url'  => 'purchases',
-            'icon' => 'far fa-money-check-alt',
+            'icon' => 'fa-solid fa-receipt',
         ],
         [         
             'text' => 'Notes',
             'url'  => 'notes',
-            'icon' => 'far fa-sticky-note',
+            'icon' => 'fa-regular fa-note-sticky',
         ],
     ],
 
