@@ -247,7 +247,7 @@ return [
         [         
             'text' => 'Purchases',
             'url'  => 'purchases',
-            'icon' => 'fa-solid fa-receipt',
+            'icon' => <i class="fa-solid fa-receipt"></i>,
         ],
         [         
             'text' => 'Notes',
