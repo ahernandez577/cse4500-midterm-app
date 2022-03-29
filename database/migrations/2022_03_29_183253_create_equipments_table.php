@@ -16,6 +16,13 @@ return new class extends Migration
         Schema::create('equipments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('price');
+            $table->string('ghz');
+            $table->string('ram');
+            $table->smallInteger('invoiceNumber');
+            $table->enum('category', ['desktop', 'laptop', 'tablet']);
+
         });
     }
 
