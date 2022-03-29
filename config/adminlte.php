@@ -230,19 +230,29 @@ return [
             'text' => 'search',
         ],     
         [
-            'text' => 'To Do\'s',
-            'url'  => 'todos',
-            'icon' => 'far fa-list-alt',
+            'text' => 'Units',
+            'url'  => 'units',
+            'icon' => 'far fa-computer-classic',
         ],
         [         
-            'text' => 'Calendar',
-            'url'  => 'calendar',
-            'icon' => 'fas fa-fw fa-calendar-alt',
+            'text' => 'Hardware',
+            'url'  => 'hardware',
+            'icon' => 'far fa-robot',
         ],
         [         
-            'text' => 'Board',
-            'url'  => 'board',
-            'icon' => 'far fa-newspaper',
+            'text' => 'Employees',
+            'url'  => 'employees',
+            'icon' => 'far fa-user-hard-hat',
+        ],
+        [         
+            'text' => 'Purchases',
+            'url'  => 'purchases',
+            'icon' => 'far fa-money-check-alt',
+        ],
+        [         
+            'text' => 'Notes',
+            'url'  => 'notes',
+            'icon' => 'far fa-sticky-note',
         ],
     ],
 
