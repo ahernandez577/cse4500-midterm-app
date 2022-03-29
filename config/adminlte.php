@@ -232,22 +232,22 @@ return [
         [
             'text' => 'Units',
             'url'  => 'units',
-            'icon' => 'far fa-computer-classic',
+            'icon' => 'fa-solid fa-computer',
         ],
         [         
             'text' => 'Hardware',
             'url'  => 'hardware',
-            'icon' => 'far fa-robot',
+            'icon' => 'fa-solid fa-robot',
         ],
         [         
             'text' => 'Employees',
             'url'  => 'employees',
-            'icon' => 'far fa-user-hard-hat',
+            'icon' => 'fa-solid fa-people-group',
         ],
         [         
             'text' => 'Purchases',
             'url'  => 'purchases',
-            'icon' => <i class="fa-solid fa-receipt"></i>,
+            'icon' => 'fa-solid fa-money-check-dollar',
         ],
         [         
             'text' => 'Notes',
