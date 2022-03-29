@@ -37,4 +37,8 @@ Route::get('/notes', function () {
     return view('notes');
 });
 
+Route::fallback(function () {
+    return view('error');
+ });
+
 URL::forceScheme('https');
