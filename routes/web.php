@@ -17,20 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/units', function () {
-    return view('units');
+Route::get('/invoices', function () {
+    return view('invoices');
 });
 
-Route::get('/hardware', function () {
-    return view('hardware');
+Route::get('/customers', function () {
+    return view('customers');
 });
 
-Route::get('/employees', function () {
-    return view('employees');
+Route::get('/equipment', function () {
+    return view('equipment');
 });
 
-Route::get('/purchases', function () {
-    return view('purchases');
+Route::get('/manufacturers', function () {
+    return view('manufacturers');
 });
 
 Route::get('/notes', function () {
