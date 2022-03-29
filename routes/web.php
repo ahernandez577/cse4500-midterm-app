@@ -17,4 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/units', function () {
+    return view('units');
+});
+
+Route::get('/hardware', function () {
+    return view('hardware');
+});
+
+Route::get('/employees', function () {
+    return view('employees');
+});
+
+Route::get('/purchases', function () {
+    return view('purchases');
+});
+
+Route::get('/notes', function () {
+    return view('notes');
+});
+
 URL::forceScheme('https');
