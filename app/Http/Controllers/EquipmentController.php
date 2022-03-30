@@ -17,7 +17,7 @@ class EquipmentController extends Controller
     public function index()
     {
         $equipment = Equipment::all();
-        return view('equipments.list', compact('equipments'));
+        return view('equipment.list', compact('equipment'));
     }
 
     /**
@@ -31,7 +31,7 @@ class EquipmentController extends Controller
             'method' => 'POST',
             'url' => route('equipment.store')
         ]);
-        return view('equipments.create');
+        return view('equipment.create');
     }
 
     /**
