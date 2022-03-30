@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('ram');
             $table->smallInteger('invoiceNumber');
             $table->enum('category', ['desktop', 'laptop', 'tablet']);
-
+            $table->foreignId('manufacturer_id')->constrained("manufacturers");
         });
     }
 
