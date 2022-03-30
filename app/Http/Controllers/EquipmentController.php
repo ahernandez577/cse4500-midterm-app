@@ -46,7 +46,6 @@ class EquipmentController extends Controller
         $form->redirectIfNotValid();
         Equipment::create($form->getFieldValues());
         return $this->index();
-        ]);
     }
 
     /**
