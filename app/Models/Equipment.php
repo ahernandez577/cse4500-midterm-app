@@ -9,7 +9,7 @@ class Equipment extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'price', 'ghz', 'ram', 'category'];
-    protected $table = 'equipments';
+    protected $table = 'equipment';
 
     public function manufacturer()
     {
