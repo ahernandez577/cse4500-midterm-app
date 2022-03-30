@@ -36,7 +36,24 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name'=>'required',
+            'sales_email'=>'required',
+            'sales_phone'=>'required',
+            'tech_email'=>'required',
+            'tech_phone'=>'required',
+        ]);
+
+        $customer = customer::create([
+            'name' => $request->name, 
+            'sales_email' => $request->sales_email, 
+            'sales_phone' => $request->sales_phone,
+            'tech_email' => $request-> tech_email,
+            'tech_phone' => $request-> tech_phone,
+
+        ]);
+        return $this->index();
+        
     }
 
     /**
@@ -47,7 +64,8 @@ class ManufacturerController extends Controller
      */
     public function show($id)
     {
-        //
+        $manufacturer = Manufacturer::find($id);
+        return view('manufacturers.show', compact('manufacturer'));
     }
 
     /**

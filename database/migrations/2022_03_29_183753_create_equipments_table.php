@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('ghz');
             $table->string('ram');
-            $table->smallInteger('invoiceNumber');
+            $table->string('invoiceNumber');
             $table->enum('category', ['desktop', 'laptop', 'tablet']);
             $table->foreignId('manufacturer_id')->constrained("manufacturers");
         });

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('sales_email');
-            $table->string('sales_mobile');
+            $table->string('sales_phone');
             $table->string('tech_email');
-            $table->string('tech_mobile');
+            $table->string('tech_phone');
 
         });
     }
