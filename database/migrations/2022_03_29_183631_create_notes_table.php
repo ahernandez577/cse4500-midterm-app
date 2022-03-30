@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('invoice_equipments', function (Blueprint $table) {
+        Schema::create('note', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('invoice_id')->constrained("invoices")->onDelete('cascade');
-            $table->foreignId('equipment_id')->constrained("equipments")->onDelete('cascade');
+            $table->string("service");
+            $table->string("software");
+            $table->string("content");
+            $table->foreignId('equipment_id')->constrained("equipments")->onDelete('cascade');;
     }
 
     /**
