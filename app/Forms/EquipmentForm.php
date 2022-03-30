@@ -7,8 +7,6 @@ use Kris\LaravelFormBuilder\Field;
 
 use App\Models\Manufacturer;
 
-
-
 function getManufacuters() {
     $retVal = array();
     $manufacuters = Manufacturer::where('id' ,'>' ,0)->get();
