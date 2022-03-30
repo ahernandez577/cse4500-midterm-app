@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Manufacturer;
 
+use Kris\LaravelFormBuilder\FormBuilder;
+use App\Forms\ManufacturerForm;
+
 class ManufacturerController extends Controller
 {
     /**
@@ -15,7 +18,7 @@ class ManufacturerController extends Controller
     public function index()
     {
         $manufacturers = Manufacturer::all(); 
-        return view('manufacturer', compact('manufacturers'));
+        return view('manufacturer.list', compact('manufacturers'));
     }
 
     /**
@@ -23,8 +26,12 @@ class ManufacturerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder)
     {
+        $form = $formBuilder->create(ManufacturerForm::class, [
+            'method' => 'POST',
+            'url' => route('manufacturer.store')
+        ]);
         return view('manufacturers.create')
     }
 
@@ -36,24 +43,11 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'=>'required',
-            'sales_email'=>'required',
-            'sales_phone'=>'required',
-            'tech_email'=>'required',
-            'tech_phone'=>'required',
-        ]);
-
-        $customer = customer::create([
-            'name' => $request->name, 
-            'sales_email' => $request->sales_email, 
-            'sales_phone' => $request->sales_phone,
-            'tech_email' => $request-> tech_email,
-            'tech_phone' => $request-> tech_phone,
-
-        ]);
+        //validation
+        $form = $formBuilder->create(ManufacturerForm::class);
+        $form->redirectIfNotValid();
+        Manufacturer::create($form->getFieldValues());
         return $this->index();
-        
     }
 
     /**

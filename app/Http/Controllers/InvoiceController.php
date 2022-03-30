@@ -18,7 +18,8 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-        //
+        $invoices = Invoice::all();
+        return view('invoice.list', compact('invoices'));
     }
 
     /**
@@ -26,9 +27,18 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder, Request $request)
     {
-        //
+        $form = $formBuilder->create(InvoiceForm::class, [
+            'method' => 'POST',
+            'url' => route('invoice.store'),
+        ]);
+        $user = $request->get('user', 0);
+        $form->modify('customer_id', "number", [
+            'default_value' => $user,
+        ]);
+        
+        return view('invoice.create', compact('form'));
     }
 
     /**
@@ -37,9 +47,12 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormBuilder $formBuilder
     {
-        //
+        $form = $formBuilder->create(InvoiceForm::class);
+        $form->redirectIfNotValid();
+        $invoice = Invoice::create($form->getFieldValues());
+        return $this->index();
     }
 
     /**
@@ -50,7 +63,8 @@ class InvoiceController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = Invoice::find($id);
+        return view('invoice.detail', compact('invoice'));
     }
 
     /**
