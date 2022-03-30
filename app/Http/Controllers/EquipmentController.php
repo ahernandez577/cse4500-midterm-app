@@ -31,7 +31,7 @@ class EquipmentController extends Controller
             'method' => 'POST',
             'url' => route('equipment.store')
         ]);
-        return view('equipments.create')
+        return view('equipments.create');
     }
 
     /**
