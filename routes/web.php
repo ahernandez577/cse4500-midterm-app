@@ -13,28 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('/customer', CustomerController::class);
+Route::resource('/manufacturer', ManufacturerController::class);
+Route::resource('/equipment', EquipmentController::class);
+Route::resource('/invoice', InvoiceController::class);
+Route::resource('/note', NotesController::class);
+
+Route::post('/invoice/{invoiceID}/{itemID}', [InvoiceController::class, 'addItem'])->name('equipment.addItem');
+
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/invoices', function () {
-    return view('invoices');
-});
-
-Route::get('/customers', function () {
-    return view('customers');
-});
-
-Route::get('/equipment', function () {
-    return view('equipment');
-});
-
-Route::get('/manufacturers', function () {
-    return view('manufacturers');
-});
-
-Route::get('/notes', function () {
-    return view('notes');
 });
 
 Route::fallback(function () {
