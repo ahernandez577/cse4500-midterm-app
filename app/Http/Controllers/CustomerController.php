@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use Kris\LaravelFormBuilder\FormBuilder;
+use App\Forms\CustomerForm;
 
 class CustomerController extends Controller
 {
@@ -14,17 +16,21 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $customer = Customer::all(); 
-        return view('customers', compact('customer'));
+        $customers = Customer::all(); 
+        return view('customer.list', compact('customers'));
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder)
     {
-        return view('customer.create');
+        $form = $formBuilder->create(CustomerForm::class, [
+            'method' => 'POST',
+            'url' => route('customer.store')
+        ]);
+        return view('customer.create', compact('form'));
     }
 
     /**
@@ -33,18 +39,11 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormBuilder $formBuilder)
     {
-        $validated = $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'phoneNumber'=>'required',
-        ]);
-        $customer = customer::create([
-            'name' => $request->name, 
-            'email' => $request->email, 
-            'phoneNumber' => $request->phoneNumber,
-        ]);
+        $form = $formBuilder->create(CustomerForm::class);
+        $form->redirectIfNotValid();
+        Customer::create($form->getFieldValues());
         return $this->index();
     }
 
@@ -57,7 +56,8 @@ class CustomerController extends Controller
     public function show($id)
     {
         $customer = Customer::find($id);
-        return view('customers.show', compact('customer'));
+        $customer->invoices;
+        return view('customer.detail', compact('customer'));
     }
 
     /**

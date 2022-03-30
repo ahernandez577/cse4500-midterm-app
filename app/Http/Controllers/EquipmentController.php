@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Equipment;
+use Kris\LaravelFormBuilder\FormBuilder;
+use App\Forms\EquipmentForm;
 
 class EquipmentController extends Controller
 {
@@ -22,8 +25,12 @@ class EquipmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(FormBuilder $formBuilder)
     {
+        $form = $formBuilder->create(EquipmentForm::class, [
+            'method' => 'POST',
+            'url' => route('equipment.store')
+        ]);
         return view('equipments.create')
     }
 
@@ -35,14 +42,11 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'=>'required',
-            'price'=>'required',
-            'ghz'=>'required',
-            'ram'=>'required',
-            'invoiceNumber'=>'required',
+        $form = $formBuilder->create(EquipmentForm::class);
+        $form->redirectIfNotValid();
+        Equipment::create($form->getFieldValues());
+        return $this->index();
         ]);
-        
     }
 
     /**
@@ -53,7 +57,8 @@ class EquipmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $equipment = Equipment::find($id);
+        return view('equipment.detail', compact('equipment'));
     }
 
     /**
