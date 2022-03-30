@@ -40,7 +40,7 @@ class EquipmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(EquipmentForm::class);
         $form->redirectIfNotValid();
