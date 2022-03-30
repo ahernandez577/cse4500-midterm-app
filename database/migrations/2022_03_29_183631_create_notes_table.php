@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string("service");
             $table->string("software");
             $table->string("content");
-            $table->foreignId('equipment_id')->constrained("equipments")->onDelete('cascade');;
+            $table->foreignId('equipment_id')->constrained("equipments")->onDelete('cascade');
+        });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_equipments');
+        Schema::dropIfExists('note');
     }
 };
