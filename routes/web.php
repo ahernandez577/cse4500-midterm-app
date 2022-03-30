@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\EquipmentController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\NotesController;
 
 /*
 |--------------------------------------------------------------------------
