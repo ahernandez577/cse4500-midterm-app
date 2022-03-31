@@ -19,7 +19,7 @@ class InvoiceController extends Controller
     public function index()
     {
         $invoices = Invoice::all();
-        return view('invoice.list', compact('invoices'));
+        return view('invoices.list', compact('invoices'));
     }
 
     /**
@@ -38,7 +38,7 @@ class InvoiceController extends Controller
             'default_value' => $user,
         ]);
         
-        return view('invoice.create', compact('form'));
+        return view('invoices.create', compact('form'));
     }
 
     /**
@@ -64,7 +64,7 @@ class InvoiceController extends Controller
     public function show($id)
     {
         $invoice = Invoice::find($id);
-        return view('invoice.detail', compact('invoice'));
+        return view('invoices.detail', compact('invoice'));
     }
 
     /**
