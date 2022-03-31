@@ -30,10 +30,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::fallback(function () {
-    return view('error');
- });
-
 Route::get('/db-test', function () {
     try {         
          echo \DB::connection()->getDatabaseName();     
