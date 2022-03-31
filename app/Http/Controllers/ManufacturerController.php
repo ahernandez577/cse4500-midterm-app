@@ -41,7 +41,7 @@ class ManufacturerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormBuilder $formBuilder)
     {
         //validation
         $form = $formBuilder->create(ManufacturerForm::class);
