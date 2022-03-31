@@ -17,7 +17,7 @@ class EquipmentController extends Controller
     public function index()
     {
         $equipments = Equipment::all();
-        return view('equipment.list', compact('equipment'));
+        return view('equipment.list', compact('equipments'));
     }
 
     /**
