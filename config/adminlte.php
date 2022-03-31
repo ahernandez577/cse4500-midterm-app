@@ -231,12 +231,12 @@ return [
         ],
         [
             'text' => 'Manage Invoices',
-            'url'  => 'invoices',
+            'url'  => 'invoice',
             'icon' => 'fas fa-fw fa-file',
         ],
         [
             'text' => 'Manage Customers',
-            'url'  => 'customers',
+            'url'  => 'customer',
             'icon' => 'fas fa-fw fa-file',
         ],
         [         
@@ -246,7 +246,7 @@ return [
         ],
         [
             'text' => 'Manufacturers',
-            'url'  => 'manufacturers',
+            'url'  => 'manufacturer',
             'icon' => 'fas fa-fw fa-file',
         ],
         [
