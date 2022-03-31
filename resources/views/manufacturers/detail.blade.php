@@ -28,7 +28,6 @@
         </dl>
     </div>
     <span style="float:right;">
-        <a href="{{ route('manufacturer.edit',['manufacturer'=>$manufacturer->id]) }} " class="btn btn-warning">Update</a>
         <a href="{{ route('manufacturer.destroy',['manufacturer'=>$manufacturer->id]) }}" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('submit-form').submit();">
         Delete</a>
         <form id="submit-form" action="{{ route('manufacturer.destroy',['manufacturer'=>$manufacturer->id]) }}" method="POST" class="hidden">
