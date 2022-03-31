@@ -17,7 +17,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all(); 
-        return view('customer.list', compact('customers'));
+        return view('customers.list', compact('customers'));
     }
     /**
      * Show the form for creating a new resource.
