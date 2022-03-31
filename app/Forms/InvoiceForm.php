@@ -16,6 +16,10 @@ class InvoiceForm extends Form
                 'rules' => 'required',
                 'label' => 'User ID'
             ])
+            add('equipment_id', Field::NUMBER, [
+                'rules' => 'required',
+                'label' => 'Equipment ID'
+            ])
             ->add('purchase_date', Field::DATE, [
                 'rules' => 'required',
                 'label' => 'Purchase Date'
