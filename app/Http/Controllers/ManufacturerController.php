@@ -32,7 +32,7 @@ class ManufacturerController extends Controller
             'method' => 'POST',
             'url' => route('manufacturer.store')
         ]);
-        return view('manufacturers.create')
+        return view('manufacturers.create');
     }
 
     /**
