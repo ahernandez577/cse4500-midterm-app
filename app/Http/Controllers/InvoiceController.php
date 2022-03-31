@@ -47,7 +47,7 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(FormBuilder $formBuilder
+    public function store(FormBuilder $formBuilder)
     {
         $form = $formBuilder->create(InvoiceForm::class);
         $form->redirectIfNotValid();
