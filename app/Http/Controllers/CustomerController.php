@@ -57,7 +57,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
         $customer->invoices;
-        return view('customer.detail', compact('customer'));
+        return view('customers.detail', compact('customer'));
     }
 
     /**
