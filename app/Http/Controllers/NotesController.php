@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Notes;
 
 use Kris\LaravelFormBuilder\FormBuilder;
@@ -17,8 +18,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $note = Notes::all(); 
-        return view('notes.list', compact('notes'));
+        //
     }
 
     /**
@@ -97,6 +97,9 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Notes::find($id);
+        $returnId = $note->equipment->id;
+        Notes::destroy($id);
+        return redirect('/equipment/' . $returnId);
     }
 }
