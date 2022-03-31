@@ -20,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($equipments AS $equipment)
+        @foreach($equipment AS $equipment)
         <tr>
           <td>{{ $equipment->id }}</td>
           <td>{{ $equipment->manufacturer->name }}</td>
