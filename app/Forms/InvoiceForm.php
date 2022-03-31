@@ -16,7 +16,7 @@ class InvoiceForm extends Form
                 'rules' => 'required',
                 'label' => 'User ID'
             ])
-            add('equipment_id', Field::NUMBER, [
+            ->add('equipment_id', Field::NUMBER, [
                 'rules' => 'required',
                 'label' => 'Equipment ID'
             ])
