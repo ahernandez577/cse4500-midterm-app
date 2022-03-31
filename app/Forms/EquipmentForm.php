@@ -42,7 +42,7 @@ class EquipmentForm extends Form
             'choices' => ['desktop' => "Desktop", 'laptop' => "Laptop", 'tablet' => 'Tablet'],
             'empty_value' => '=== Select Category ==='
         ])
-        ->add('manufacturer_id', Field::SELECT, [
+        ->add('manufacturer_id', Field::TEXT, [
             'rules' => 'required',
             'label' => 'Manufacturer',
         ])
