@@ -98,6 +98,7 @@ class InvoiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Invoice::destroy($id);
+        return redirect('/invoice');
     }
 }

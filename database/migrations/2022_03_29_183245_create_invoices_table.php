@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->date('purchase_date');
-            $table->foreignId('customer_id')->constrained('customers');
-            $table->foreignId('equipment_id')->constrained('equipments');
+            $table->foreignId('customer_id')->constrained("customers");
+            $table->foreignId('equipment_id')->constrained("equipments");
 
         });
     }
