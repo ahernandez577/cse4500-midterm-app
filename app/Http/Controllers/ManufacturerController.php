@@ -59,7 +59,7 @@ class ManufacturerController extends Controller
     public function show($id)
     {
         $manufacturer = Manufacturer::find($id);
-        return view('manufacturer.detail', compact('manufacturer'));
+        return view('manufacturers.detail', compact('manufacturer'));
     }
 
     /**
