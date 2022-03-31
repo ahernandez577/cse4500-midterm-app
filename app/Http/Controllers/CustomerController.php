@@ -30,7 +30,7 @@ class CustomerController extends Controller
             'method' => 'POST',
             'url' => route('customer.store')
         ]);
-        return view('customer.create', compact('form'));
+        return view('customers.create', compact('form'));
     }
 
     /**
