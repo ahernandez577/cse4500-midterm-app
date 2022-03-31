@@ -18,7 +18,8 @@ class NotesController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Notes::all();
+        return view('notes.list', compact('notes'));
     }
 
     /**
