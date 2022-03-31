@@ -18,7 +18,7 @@ class ManufacturerController extends Controller
     public function index()
     {
         $manufacturers = Manufacturer::all(); 
-        return view('manufacturers.list', compact('manufacturers'));
+        return view('manufacturer.list', compact('manufacturers'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ManufacturerController extends Controller
             'method' => 'POST',
             'url' => route('manufacturer.store')
         ]);
-        return view('manufacturers.create');
+        return view('manufacturer.create', compact('form'));
     }
 
     /**
@@ -59,7 +59,7 @@ class ManufacturerController extends Controller
     public function show($id)
     {
         $manufacturer = Manufacturer::find($id);
-        return view('manufacturer.show', compact('manufacturer'));
+        return view('manufacturer.detail', compact('manufacturer'));
     }
 
     /**
